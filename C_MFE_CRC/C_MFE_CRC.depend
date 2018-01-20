@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1516104803 source:d:\documents\codeblocksproject\c_mfe_crc\main.c
+	<stdio.h>
+	<stdlib.h>
+
