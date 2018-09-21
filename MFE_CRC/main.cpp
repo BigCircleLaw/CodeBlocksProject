@@ -50,23 +50,20 @@ unsigned short CRC16Bit(const unsigned  char *buf, int len)
 
 int main()
 {
-    unsigned char i = 0,aaa[100] = {0xFF,0x00,0x2,0x03,0x3,0x03,0x10,0x09,0xFE};
+    unsigned char i = 0,aaa[100] = {0xFF,0x00,0x2,0x03,0x00, 0x02, 0x13, 0x08, 0xFE};
 	unsigned short CRC;
 	while(aaa[i]!=0xFE)
     {
         i++;
     }
-    cout << int(i) << endl;
     int len = i+3;
 	unsigned char *crcList = new unsigned char[len];
-    cout << len << endl;
 	for (i = 0; i < len-3; i++)
     {
         crcList[i] = aaa[i];
     }
-
+    crcList[4] = len-8;
 	CRC = CRC16Bit(crcList, len-3);
-    cout << CRC << endl;
 	crcList[len-3] = CRC / 256;
 	crcList[len-2] = CRC % 256;
     crcList[len-1] = 0xFE;
