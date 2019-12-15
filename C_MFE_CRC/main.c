@@ -48,7 +48,7 @@ unsigned short CRC16Bit(const unsigned  char *buf, int len)
 
 int main()
 {
-    unsigned char i,aaa[len] = {0xFF,0x00,0x2,0x03,0x1,0x07};
+    unsigned char i,aaa[len] = {0xFF,0x00,0x2,0x03,0x1,0x01};
 	unsigned short CRC;
 	CRC = CRC16Bit(aaa, len-2);
 

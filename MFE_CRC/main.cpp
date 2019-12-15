@@ -1,5 +1,6 @@
 #include <iostream>
 //#include <cstdlib>
+#include <stdio.h>
 
 using namespace std;
 
@@ -50,7 +51,7 @@ unsigned short CRC16Bit(const unsigned  char *buf, int len)
 
 int main()
 {
-    unsigned char i = 0,aaa[100] = {0xFF,0x00,0x2,0x03,0x00, 0x02, 0x13, 0x08, 0xFE};
+    unsigned char i = 0,aaa[100] = {0xFF, 0x00, 0x04, 0x00, 0x05, 0x14, 0x0B, 0xC1, 0x00, 0x00, 0xFE};
 	unsigned short CRC;
 	while(aaa[i]!=0xFE)
     {

@@ -39,9 +39,17 @@ class Student
         return m_strName;
     }
 };
-
+typedef const void *mp_const_obj_t;
+typedef mp_const_obj_t mp_rom_obj_t;
+void* module_do_update_value(void* self_in) {
+    // module_obj_content_t *self=MP_OBJ_TO_PTR(self_in);  //从第一个参数里面取出对象的指针
+    // self->value1=100;
+    // self->value2=mp_obj_get_int(data);    //从第二个参数里面取出整型数值
+	return NULL;  //返回计算的结果
+}
 int main(void)
 {
+    mp_rom_obj_t aa = (void *)module_do_update_value;
     // 通过new方式实例化对象*stu
     Student *stu = new Student();
     // 更改对象的数据成员为“慕课网”
